@@ -44,8 +44,8 @@ FACE_MAPPING_PATH    = os.path.join(MODELS_DIR, 'face_label_mapping.json')
 
 # HELPERS
 
-def status(icon, message):
-    print(f"  {icon}  {message}")
+def status( message):
+    print(f"    {message}")
 
 def extract_audio_features(y, sr):
     """Extract 42 features: 40 MFCCs + spectral roll-off + RMS energy."""
