@@ -37,7 +37,6 @@ from sklearn.preprocessing import LabelEncoder as LE
 # PATHS
 MODELS_DIR  = 'models'
 FACES_DIR   = 'faces'
-AUDIO_DIR   = 'audio'
 
 PRODUCT_MODEL_PATH   = os.path.join(MODELS_DIR, 'product_recommendation_model.pkl')
 LABEL_ENCODER_PATH   = os.path.join(MODELS_DIR, 'label_encoder.pkl')
