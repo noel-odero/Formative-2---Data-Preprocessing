@@ -28,9 +28,11 @@ import warnings
 warnings.filterwarnings('ignore')
 
 import numpy as np
+import pandas as pd
 import joblib
 import librosa
 from deepface import DeepFace
+from sklearn.preprocessing import LabelEncoder as LE
 
 # PATHS
 MODELS_DIR  = 'models'
@@ -140,8 +142,6 @@ def get_product_recommendation(product_model, label_encoder, member_name):
     Generate a product recommendation for the verified member.
     Uses median feature values as a representative input vector.
     """
-    import pandas as pd
-
     # Load merged dataset to get a representative sample for this simulation
     merged_path = 'Task1/merged_customer_dataset.csv'
     if not os.path.exists(merged_path):
@@ -152,7 +152,6 @@ def get_product_recommendation(product_model, label_encoder, member_name):
 
         # Encode categoricals the same way as training
         cat_cols = ['social_media_platform', 'review_sentiment']
-        from sklearn.preprocessing import LabelEncoder as LE
         for col in cat_cols:
             if col in df.columns:
                 df[col] = LE().fit_transform(df[col].astype(str))
