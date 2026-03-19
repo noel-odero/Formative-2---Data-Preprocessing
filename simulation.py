@@ -44,7 +44,7 @@ VOICE_ENCODER_PATH   = os.path.join(MODELS_DIR, 'voice_label_encoder.pkl')
 
 # HELPERS
 
-def status( message):
+def status(message):
     print(f"    {message}")
 
 def extract_audio_features(y, sr):
