@@ -21,7 +21,6 @@ import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
 import sys
-import json
 import time
 import argparse
 import warnings
@@ -42,8 +41,6 @@ PRODUCT_MODEL_PATH   = os.path.join(MODELS_DIR, 'product_recommendation_model.pk
 LABEL_ENCODER_PATH   = os.path.join(MODELS_DIR, 'label_encoder.pkl')
 VOICE_MODEL_PATH     = os.path.join(MODELS_DIR, 'voiceprint_model.pkl')
 VOICE_ENCODER_PATH   = os.path.join(MODELS_DIR, 'voice_label_encoder.pkl')
-VOICE_MAPPING_PATH   = os.path.join(MODELS_DIR, 'voice_label_mapping.json')
-FACE_MAPPING_PATH    = os.path.join(MODELS_DIR, 'face_label_mapping.json')
 
 # HELPERS
 
@@ -74,11 +71,7 @@ def load_models():
         voice_model    = joblib.load(VOICE_MODEL_PATH)
         voice_encoder  = joblib.load(VOICE_ENCODER_PATH)
 
-        with open(FACE_MAPPING_PATH)  as f: face_mapping  = json.load(f)
-        with open(VOICE_MAPPING_PATH) as f: voice_mapping = json.load(f)
-
-        return product_model, label_encoder, voice_model, voice_encoder, \
-               face_mapping, voice_mapping
+        return product_model, label_encoder, voice_model, voice_encoder
     except FileNotFoundError as e:
         print(f"\n Model file not found: {e}")
         print("  Make sure all models are in the 'models/' folder.")
@@ -174,8 +167,7 @@ def get_product_recommendation(product_model, label_encoder, member_name):
 def run_simulation(face_path, voice_path, claimed_member):
 
     # Load all models
-    product_model, label_encoder, voice_model, voice_encoder, \
-    face_mapping, voice_mapping = load_models()
+    product_model, label_encoder, voice_model, voice_encoder = load_models()
 
     #  HEADER 
    
