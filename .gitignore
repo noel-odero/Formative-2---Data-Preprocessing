@@ -1,1 +1,25 @@
-venv
+# Virtual environment
+venv310/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Model files
+*.h5
+*.pkl
+
+# Data files
+*.csv
+*.xlsx
+
+# Environment variables
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
