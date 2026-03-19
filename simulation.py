@@ -93,10 +93,6 @@ def verify_face(probe_path, claimed_member):
     ref_path = os.path.join(FACES_DIR, claimed_member, 'neutral.jpeg')
 
     if not os.path.exists(ref_path):
-        # Try .jpeg extension
-        ref_path = os.path.join(FACES_DIR, claimed_member, 'neutral.jpeg')
-
-    if not os.path.exists(ref_path):
         print(f"  Reference image not found for {claimed_member}")
         return False, 9.999
 
