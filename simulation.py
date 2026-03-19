@@ -129,7 +129,7 @@ def verify_voice(audio_path, claimed_member, voice_model, voice_encoder):
         return False, 'unknown', 0.0
 
 # STEP 3 - PRODUCT RECOMMENDATION
-def get_product_recommendation(product_model, label_encoder, member_name):
+def get_product_recommendation(product_model, label_encoder):
     """
     Generate a product recommendation for the verified member.
     Uses median feature values as a representative input vector.
@@ -221,7 +221,7 @@ def run_simulation(face_path, voice_path, claimed_member):
     loading("  Generating personalised recommendation")
 
     product, prod_confidence = get_product_recommendation(
-        product_model, label_encoder, claimed_member
+        product_model, label_encoder
     )
 
     status( f"Recommended Product : {product}")
