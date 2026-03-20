@@ -6,7 +6,7 @@ A multi-modal machine learning pipeline that combines **tabular data**, **facial
 
 The system works in three stages:
 
-1. **Task 1** — Merge customer transaction and social-profile data, perform EDA, and train a product-category prediction model.
+1. **Task 1** — Consolidate customer transaction and social profile datasets, conduct exploratory data analysis (EDA), and develop a predictive model for product categories.
 2. **Task 2** — Collect facial images, apply augmentations, and build a face recognition model (CNN + DeepFace).
 3. **Task 3** — Collect voice recordings, extract audio features, and build a voiceprint verification model (Random Forest + CNN).
 
@@ -151,6 +151,8 @@ openpyxl
 ```
 
 ---
+
+
 
 ## Task READMEs
 
