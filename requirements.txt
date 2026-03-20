@@ -1,0 +1,16 @@
+deepface
+tensorflow
+keras
+tf-keras
+librosa
+soundfile
+scikit-learn
+joblib
+pandas
+numpy
+opencv-python
+Pillow
+openpyxl
+xgboost
+matplotlib
+seaborn
