@@ -6,8 +6,8 @@ A multi-modal machine learning pipeline that combines **tabular data**, **facial
 
 The system works in three stages:
 
-1. **Task 1** — Consolidate customer transaction and social profile datasets, conduct exploratory data analysis (EDA), and develop a predictive model for product categories.
-2. **Task 2** — Collect facial images, apply augmentations, and build a face recognition model (CNN + DeepFace).
+1. **Task 1** — consolidate customer transaction and social profile datasets, conduct exploratory data analysis (EDA), and develop a predictive model for product categories.
+2. **Task 2** — gather and augment facial image data to train a robust biometric recognition system utilizing CNNs and DeepFace..
 3. **Task 3** — Collect voice recordings, extract audio features, and build a voiceprint verification model (Random Forest + CNN).
 
 All three models are combined in `simulation.py`, which runs a full end-to-end identity verification and product recommendation pipeline.
